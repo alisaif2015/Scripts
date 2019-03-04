@@ -7,6 +7,8 @@ eid=sra2275
 
 start=$SECONDS
 
+mv ~/1_${prot}_Ref_Seq.fasta ~/outputFiles
+
 cd /home/${eid}/Scripts
 
 python newBlast.py $prot 
