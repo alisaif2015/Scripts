@@ -11,7 +11,7 @@ mv ~/1_${prot}_Ref_Seq.fasta ~/outputFiles
 
 cd /home/${eid}/Scripts
 
-python newBlast.py $prot 
+python newBlast.py $prot $eid
 
 xmlFiles="2_${prot}_100_BLAST 2_${prot}_250_BLAST 2_${prot}_500_BLAST 2_${prot}_1000_BLAST 2_${prot}_5000_BLAST 2_${prot}_10000_BLAST 2_${prot}_20000_BLAST"
 
