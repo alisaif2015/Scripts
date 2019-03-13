@@ -7,9 +7,15 @@ eid=sra2275
 
 start=$SECONDS
 
+mv ~/outputFiles/Scripts/biopython-1.73 ~/outputFiles
+mv ~/outputFiles/Scripts/mafft-linux64 ~/outputFiles
+mv ~/outputFiles/Scripts/getAlignment.sh ~/outputFiles
+mv ~/outputFiles/Scripts/GetFASTA.py ~/outputFiles
+mv ~/outputFiles/Scripts/newBlast.py ~/outputFiles
+mv ~/outputFiles/Scripts/newTranspose.py ~/outputFiles
 mv ~/1_${prot}_Ref_Seq.fasta ~/outputFiles
 
-cd /home/${eid}/Scripts
+cd ~/outputFiles/
 
 python newBlast.py $prot $eid
 
@@ -28,8 +34,16 @@ fastaFiles="_${prot}_100_ _${prot}_250_ _${prot}_500_ _${prot}_1000_ _${prot}_50
 
 for file in $fastaFiles
 do
-	/home/${eid}/mafft-linux64/mafft.bat "2${file}BLAST.fasta" > "4${file}MAFFT.fasta"
+	~/outputFiles/mafft-linux64/mafft.bat "2${file}BLAST.fasta" > "4${file}MAFFT.fasta"
 done
+
+mv ~/outputFiles/biopython-1.73 ~/outputFiles/Scripts
+mv ~/outputFiles/mafft-linux64 ~/outputFiles/Scripts
+mv ~/outputFiles/getAlignment.sh ~/outputFiles/Scripts
+mv ~/outputFiles/GetFASTA.py ~/outputFiles/Scripts
+mv ~/outputFiles/newBlast.py ~/outputFiles/Scripts
+mv ~/outputFiles/newTranspose.py ~/outputFiles/Scripts
+mv ~/outputFiles/Scripts ~/
 
 duration=$(( SECONDS - start))
 echo $duration
