@@ -13,6 +13,7 @@ mv ~/outputFiles/Scripts/getAlignment.sh ~/outputFiles
 mv ~/outputFiles/Scripts/GetFASTA.py ~/outputFiles
 mv ~/outputFiles/Scripts/newBlast.py ~/outputFiles
 mv ~/outputFiles/Scripts/newTranspose.py ~/outputFiles
+mv ~/outputFiles/Scripts/transposer.py ~/outputFiles
 mv ~/1_${prot}_Ref_Seq.fasta ~/outputFiles
 
 cd ~/outputFiles/
