@@ -1,9 +1,9 @@
 #!/bin/bash
 
 prot="GDF9"
-email=alisaif2015@gmail.com
+email=
 accessionNum=NP_005251
-eid=sra2275
+eid=
 
 start=$SECONDS
 
