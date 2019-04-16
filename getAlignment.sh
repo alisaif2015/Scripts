@@ -1,8 +1,8 @@
 #!/bin/bash
 
 prot="MTHFR"
-email= alisaif2015@gmail.com
-accessionNum=NP_005948.3
+email= "alisaif2015@gmail.com"
+accessionNum="NP_005948.3"
 eid= sra2275
 
 start=$SECONDS
