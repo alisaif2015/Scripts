@@ -8,7 +8,7 @@ def main ():
   start = time.time()   
   for numHits in ["100","250","500","1000","5000","10000","20000"]:
     print("\n")
-    print("Getting " + numHits + "BLAST results/sequences for the" + sys.argv[1] + " protein family")
+    print("Getting " + numHits + " BLAST results/sequences for the " + sys.argv[1] + " protein family")
     relative_name = "1_" + sys.argv[1] +"_Ref_Seq.fasta"
     absolute_name = "/home/" + sys.argv[2] + "/outputFiles/" + relative_name
     fasta_string = open(absolute_name).read()
@@ -18,7 +18,7 @@ def main ():
     blast_result.close()
     result_handle.close()
     print("\n")
-    print("Done getting " + numHits + "BLAST results/sequences for the" + sys.argv[1] + " protein family")
+    print("Done getting " + numHits + " BLAST results/sequences for the " + sys.argv[1] + " protein family")
   end = time.time()
   print("\n")
   print("This took " + str(end-start) + " seconds to complete")
