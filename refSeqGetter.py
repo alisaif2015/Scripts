@@ -1,7 +1,7 @@
 from Bio import Entrez, SeqIO
-Entrez.email = "alisaif2015@gmail.com"
-proteinName = "MTHFR"
-accessionNum = "NP_005948.3"
+Entrez.email = "Email Here"
+proteinName = "Protein Name Here"
+accessionNum = "Accession Number Here"
 download_handle = Entrez.efetch(db="protein", id=accessionNum, rettype="fasta", retmode="text")
 data = download_handle.read()
 download_handle.close()
