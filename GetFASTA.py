@@ -8,15 +8,15 @@ def main ():
   import csv,time,Bio,sys
     
 #getting email
-#  startTime = time.time()
+  startTime = time.time()
   Entrez.email = sys.argv[1]
   
-
+  print("\n")
+  print("Starting to get fasta files for each BLAST result, this might take a while...")
   #ask for input file and name of output file
   for fileName in ["2_" + sys.argv[3] + "_100_BLAST", "2_" + sys.argv[3] + "_250_BLAST", "2_" + sys.argv[3] + "_500_BLAST", "2_" + sys.argv[3] + "_1000_BLAST", "2_" + sys.argv[3] + "_5000_BLAST", "2_" + sys.argv[3] + "_10000_BLAST", "2_" + sys.argv[3] + "_20000_BLAST"]:
     infile = fileName + ".csv"
     outfile = fileName + ".fasta"
-  
 
   #open input file, use accension number to search entrez, and store relevant info
     with open(infile,'a') as csvfile:
@@ -45,6 +45,7 @@ def main ():
       for line in line_list:
         fasfile.write(line)
     print("Done")
-#  endTime = time.time()
-# print(str(endTime-startTime) + " seconds.")
+  endTime = time.time()
+  print("\n")
+  print("This took " + str(endTime-startTime) + " seconds to complete")
 main()
