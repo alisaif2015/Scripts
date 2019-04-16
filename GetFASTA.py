@@ -34,7 +34,7 @@ def main ():
             line_list.append(line)                                                         #store FASTA info in list
         except IndexError:                                                                 #index error indicates end of csv file
           print("break")
-    break
+          break
         except:                                                                            #other errors indicate genbank file not found
           continue
 
