@@ -1,4 +1,5 @@
 from Bio import Entrez, SeqIO
+import sys
 Entrez.email = "Email Here"
 proteinName = "Protein Name Here"
 accessionNum = "Accession Number Here"
