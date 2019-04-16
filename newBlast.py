@@ -13,6 +13,7 @@ def main ():
     absolute_name = "/home/" + sys.argv[2] + "/outputFiles/" + relative_name
     fasta_string = open(absolute_name).read()
     result_handle = NCBIWWW.qblast("blastp", "nr", fasta_string, hitlist_size=int(numHits))
+    print("fetching from blast")
     blast_result = open("2_"+ sys.argv[1] +"_" + numHits + "_BLAST.xml", "w")
     blast_result.write(result_handle.read())
     blast_result.close()
