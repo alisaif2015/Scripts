@@ -2,10 +2,13 @@ def main ():
   import time,sys,os
   from Bio import Entrez, SeqIO
   from Bio.Blast import NCBIWWW
-
+  print("\n")
+  print("Starting to get BLAST results/other sequences in the " + sys.argv[1] + " protein family")
   
   start = time.time()   
   for numHits in ["100","250","500","1000","5000","10000","20000"]:
+    print("\n")
+    print("Getting " + numHits + "BLAST results/sequences for the" + sys.argv[1] + " protein family")
     relative_name = "1_" + sys.argv[1] +"_Ref_Seq.fasta"
     absolute_name = "/home/" + sys.argv[2] + "/outputFiles/" + relative_name
     fasta_string = open(absolute_name).read()
@@ -14,6 +17,9 @@ def main ():
     blast_result.write(result_handle.read())
     blast_result.close()
     result_handle.close()
+    print("\n)
+    print("Done getting " + numHits + "BLAST results/sequences for the" + sys.argv[1] + " protein family")
   end = time.time()
-  print(str(end-start) + "seconds")
+  print("\n")
+  print("This took " + str(end-start) + " seconds to complete")
 main()
