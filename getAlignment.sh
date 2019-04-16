@@ -1,9 +1,9 @@
 #!/bin/bash
 
-prot="GDF9"
-email=
-accessionNum=NP_005251
-eid=
+prot="MTHFR"
+email= alisaif2015@gmail.com
+accessionNum=NP_005948.3
+eid= sra2275
 
 start=$SECONDS
 
@@ -14,10 +14,12 @@ mv ~/outputFiles/Scripts/GetFASTA.py ~/outputFiles
 mv ~/outputFiles/Scripts/newBlast.py ~/outputFiles
 mv ~/outputFiles/Scripts/newTranspose.py ~/outputFiles
 mv ~/outputFiles/Scripts/transposer.py ~/outputFiles
-mv ~/1_${prot}_Ref_Seq.fasta ~/outputFiles
+mv ~/outputFiles/Scripts/refSeqGetter.py ~/outputFiles
+
 
 cd ~/outputFiles/
 
+python refSeqGetter.py $email $prot $accessionNum
 python newBlast.py $prot $eid
 
 xmlFiles="2_${prot}_100_BLAST 2_${prot}_250_BLAST 2_${prot}_500_BLAST 2_${prot}_1000_BLAST 2_${prot}_5000_BLAST 2_${prot}_10000_BLAST 2_${prot}_20000_BLAST"
@@ -44,6 +46,7 @@ mv ~/outputFiles/getAlignment.sh ~/outputFiles/Scripts
 mv ~/outputFiles/GetFASTA.py ~/outputFiles/Scripts
 mv ~/outputFiles/newBlast.py ~/outputFiles/Scripts
 mv ~/outputFiles/newTranspose.py ~/outputFiles/Scripts
+mv ~/outputFiles/refSeqGetter.py ~/outputFiles/Scripts
 mv ~/outputFiles/Scripts ~/
 
 duration=$(( SECONDS - start))
