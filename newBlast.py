@@ -17,7 +17,7 @@ def main ():
     blast_result.write(result_handle.read())
     blast_result.close()
     result_handle.close()
-    print("\n)
+    print("\n")
     print("Done getting " + numHits + "BLAST results/sequences for the" + sys.argv[1] + " protein family")
   end = time.time()
   print("\n")
