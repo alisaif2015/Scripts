@@ -35,9 +35,13 @@ python GetFASTA.py $email $accessionNum $prot
 
 fastaFiles="_${prot}_100_ _${prot}_250_ _${prot}_500_ _${prot}_1000_ _${prot}_5000_ _${prot}_10000_ _${prot}_20000_"
 
+echo Starting MAFFT, this will also take some time
+
 for file in $fastaFiles
 do
+	echo Creating 4${file}MAFFT.fasta file
 	~/outputFiles/mafft-linux64/mafft.bat "2${file}BLAST.fasta" > "4${file}MAFFT.fasta"
+	echo Finished creating 4${file}MAFFT.fasta file
 done
 
 mv ~/outputFiles/biopython-1.73 ~/outputFiles/Scripts
@@ -50,7 +54,7 @@ mv ~/outputFiles/refSeqGetter.py ~/outputFiles/Scripts
 mv ~/outputFiles/Scripts ~/
 
 duration=$(( SECONDS - start))
-echo $duration
+echo This process took $duration seconds
 
 
 
