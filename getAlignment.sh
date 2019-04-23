@@ -1,9 +1,9 @@
 #!/bin/bash
 
-prot="MTHFR"
-email="alisaif2015@gmail.com"
-accessionNum="NP_005948.3"
-eid=sra2275
+prot="type protein name between quotes"
+email="type email between quotes"
+accessionNum="type accession number between quotes"
+eid=type in eid without quotes, make sure no spaces are after the equals sign. 
 
 start=$SECONDS
 
