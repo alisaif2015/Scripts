@@ -6,7 +6,7 @@ def main ():
   print("Starting to get BLAST results/other sequences in the " + sys.argv[1] + " protein family")
   
   start = time.time()   
-  for numHits in ["100","250","500","1000","5000","10000","20000"]:
+  for numHits in ["100","1000","5000","20000"]:
     print("\n")
     print("Getting " + numHits + " BLAST results/sequences for the " + sys.argv[1] + " protein family")
     relative_name = "1_" + sys.argv[1] +"_Ref_Seq.fasta"
