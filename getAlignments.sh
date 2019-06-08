@@ -18,7 +18,7 @@ cp ~/outputFiles/Scripts/transposer.py ~/outputFiles_${prot}
 cp ~/outputFiles/Scripts/refSeqGetter.py ~/outputFiles_${prot}
 
 
-cd ~/outputFiles/
+cd ~/outputFiles_${prot}/
 
 python refSeqGetter.py $email $prot $accessionNum
 python newBlast.py $prot $eid
@@ -41,7 +41,7 @@ echo Starting MAFFT, this will also take some time
 for file in $fastaFiles
 do
 	echo Creating 4${file}MAFFT.fasta file
-	~/outputFiles/mafft-linux64/mafft.bat "2${file}BLAST.fasta" > "4${file}MAFFT.fasta"
+	~/outputFiles_${prot}/mafft-linux64/mafft.bat "2${file}BLAST.fasta" > "4${file}MAFFT.fasta"
 	echo Finished creating 4${file}MAFFT.fasta file
 done
 
